@@ -28,8 +28,6 @@ class App extends Component {
     return total > 0 ? Math.round((good / total) * 100) : 0;
   };
 
-  total = this.countTotalFeedback();
-  positivePercentage = this.countPositiveFeedbackPercentage();
   render() {
     return (
       <div>
@@ -46,7 +44,7 @@ class App extends Component {
                 good={this.state.good}
                 neutral={this.state.neutral}
                 bad={this.state.bad}
-                total={this.total}
+                total={this.countTotalFeedback()}
                 positivePercentage={this.countPositiveFeedbackPercentage()}
               />
             ) : (
